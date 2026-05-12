@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Birthday Surprise</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+   <body>
+
+    <!-- ── STAGE 1: ENVELOPE ── -->
+    <div id="envelope-stage">
+
+        <div class="envelope-wrap" id="envelope">
+
+            <svg class="envelope" viewBox="0 0 380 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+                <g class="envelope-body">
+
+                    <!-- Back panel -->
+                    <rect x="10" y="80" width="360" height="170" rx="4" fill="#2a2318"/>
+
+                    <!-- Letter -->
+                    <g class="letter">
+
+                        <rect x="40" y="55" width="300" height="175" rx="3" fill="var(--cream)"/>
+
+                        <line x1="75" y1="100" x2="305" y2="100" stroke="rgba(26,20,16,0.12)" stroke-width="1"/>
+                        <line x1="75" y1="120" x2="305" y2="120" stroke="rgba(26,20,16,0.12)" stroke-width="1"/>
+                        <line x1="75" y1="140" x2="305" y2="140" stroke="rgba(26,20,16,0.12)" stroke-width="1"/>
+                        <line x1="75" y1="160" x2="260" y2="160" stroke="rgba(26,20,16,0.12)" stroke-width="1"/>
+
+                        <text
+                            x="190"
+                            y="88"
+                            text-anchor="middle"
+                            font-family="Cormorant Garamond, serif"
+                            font-size="22"
+                            fill="var(--gold)"
+                            font-style="italic"
+                            opacity="0.7"
+                        >
+                            A SURPRISE FOR YOU BABY
+                        </text>
+
+                    </g>
+
+                    <!-- Front -->
+                    <rect x="10" y="120" width="360" height="130" rx="4" fill="#1e1812"/>
+
+                    <polygon points="10,120 190,210 10,250" fill="#241f17"/>
+                    <polygon points="370,120 190,210 370,250" fill="#2e2820"/>
+                    <polygon points="10,250 190,210 370,250 370,254 10,254" fill="#1a1610"/>
+
+                    <!-- Flap -->
+                    <g class="flap">
+                        <polygon points="10,124 190,215 370,124" fill="#2a2318"/>
+
+                        <line
+                            x1="10"
+                            y1="124"
+                            x2="190"
+                            y2="215"
+                            stroke="rgba(255,255,255,0.04)"
+                            stroke-width="1"
+                        />
+
+                        <line
+                            x1="370"
+                            y1="124"
+                            x2="190"
+                            y2="215"
+                            stroke="rgba(255,255,255,0.04)"
+                            stroke-width="1"
+                        />
+                    </g>
+
+                    <!-- Seal -->
+                    <g class="seal">
+                        <circle cx="190" cy="200" r="22" fill="#8B1a1a"/>
+                        <circle cx="190" cy="200" r="18" fill="#a01f1f"/>
+
+                        <text
+                            x="190"
+                            y="205"
+                            text-anchor="middle"
+                            font-family="Cormorant Garamond, serif"
+                            font-size="14"
+                            fill="rgba(255,220,150,0.8)"
+                            font-style="italic"
+                        >
+                            CJ
+                        </text>
+                    </g>
+
+                </g>
+
+            </svg>
+
+        </div>
+
+        <button class="reveal-btn" onclick="openEnvelope()">
+            CLICK TO SEE THE SURPRISE
+        </button>
+
+    </div>
+
+    <!-- ── STAGE 2 ── -->
+    <div id="website-stage">
+
+        <!-- VIDEO SECTION -->
+        <section id="video-section">
+
+            <!-- Background Video -->
+            <div class="video-bg">
+
+                <!-- Edit birthday video source -->
+                <video
+                    id="bg-video"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                >
+                    <source   
+                        src=""
+                        type="video/mp4"
+                    >
+                </video>
+
+                <div class="video-overlay"></div>
+
+            </div>
+
+            <!-- Birthday Content -->
+            <div class="birthday-content">
+
+                <p class="bday-eyebrow">sparkles</p>
+
+                <h1 class="bday-name">
+                    <em>HAPPY BIRTHDAY, BABY</em>
+                </h1>
+
+                <div class="bday-divider"></div>
+
+                <p class="bday-message">
+                    Today the world is a little more beautiful
+                    <br>
+                    because you are in it.
+                    Happy Birthday my love.
+                </p>
+
+                <p class="bday-date">
+                    22nd May · 2026
+                </p>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="video-buttons">
+
+                <button class="replay-btn" onclick="replay()">
+                    ↩ Replay
+                </button>
+
+                <button class="continue-btn" onclick="goToProfile()">
+                    Continue ↓
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PROFILE SECTION -->
+        <section class="profile-section" id="profile-section">
+
+            <button class="back-btn" onclick="goBackToVideo()">
+                ↑ Back to top
+            </button>
+
+            <div class="profile-inner">
+
+                <!-- PHOTO -->
+                <div class="profile-photo-wrap">
+
+                    <!-- Replace with real image -->
+                    <!-- <img src="his-photo.jpg" alt=""> -->
+
+                    <div class="photo-placeholder">
+
+                        <svg viewBox="0 0 120 120" fill="none">
+
+                            <circle
+                                cx="60"
+                                cy="45"
+                                r="22"
+                                fill="rgba(184,150,62,0.2)"
+                            />
+
+                            <path
+                                d="M18 102 C18 74 102 74 102 102"
+                                fill="rgba(184,150,62,0.1)"
+                            />
+
+                        </svg>
+
+                        <span>Add Photo</span>
+
+                    </div>
+
+                </div>
+
+                <!-- TEXT -->
+                <div class="profile-text">
+
+                    <p class="profile-eyebrow">
+                        The man of the hour
+                    </p>
+
+                    <h2 class="profile-name">
+                        <em>CJ</em>
+                    </h2>
+
+                    <div class="profile-divider"></div>
+
+                    <p class="profile-bio">
+                        There are people who walk into a room and make it feel fuller —
+                        warmer, brighter, more alive.
+                    </p>
+
+                    <p class="profile-bio">
+                        Today we celebrate you and all the amazing moments ahead.
+                    </p>
+
+                    <p class="profile-wishes">
+                        Happy Birthday 🥂
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
