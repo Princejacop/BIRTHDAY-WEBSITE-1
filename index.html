@@ -3,118 +3,90 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Birthday Surprise</title>
+  <title>For Mum — Birthday Surprise</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
-
-  
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Custom cursor -->
-  <div id="cursor"></div>
-  <div id="cursor-ring"></div>
+  <!-- custom cursor -->
+  <div id="cur"></div>
+  <div id="cur-r"></div>
 
   <!-- ══════════════════════════════════
        STAGE 1: ENVELOPE
   ══════════════════════════════════ -->
-  <div id="envelope-stage">
+  <div id="env-stage">
+    <div class="env-glow"></div>
+    <p class="env-label">A · Private · Occasion</p>
 
-    <div class="env-ambient"></div>
+    <div class="env-wrap" id="envelope" onclick="openEnvelope()">
+      <svg class="env-svg" viewBox="0 0 440 300" fill="none" xmlns="http://www.w3.org/2000/svg">
 
-    <p class="env-monogram">A · Birthday · Tribute</p>
+        <!-- shadow -->
+        <ellipse cx="220" cy="296" rx="168" ry="5.5" fill="rgba(0,0,0,.55)"/>
 
-    <div class="envelope-wrap" id="envelope" onclick="openEnvelope()">
-      <svg class="envelope" viewBox="0 0 420 290" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- back panel -->
+        <rect x="10" y="92" width="420" height="198" rx="2" fill="#0c0c0c"/>
+        <rect x="10" y="92" width="420" height="198" rx="2" stroke="#252525" stroke-width=".5"/>
 
-        <!-- Shadow plane -->
-        <ellipse cx="210" cy="285" rx="160" ry="6" fill="rgba(0,0,0,0.5)"/>
-
-        <!-- ── BACK PANEL ── -->
-        <rect x="10" y="90" width="400" height="190" rx="2" fill="#0f0f0f"/>
-        <rect x="10" y="90" width="400" height="190" rx="2" stroke="#2a2a2a" stroke-width="0.5"/>
-
-        <!-- ── LETTER ── -->
-        <g class="letter">
-          <!-- Letter shadow -->
-          <rect x="43" y="63" width="334" height="196" rx="2" fill="rgba(0,0,0,0.4)"/>
-          <!-- Letter body -->
-          <rect x="42" y="60" width="336" height="196" rx="2" fill="#f5f0e8"/>
-          <!-- Letter texture lines -->
-          <line x1="80" y1="108" x2="340" y2="108" stroke="rgba(26,20,16,0.07)" stroke-width="0.7"/>
-          <line x1="80" y1="128" x2="340" y2="128" stroke="rgba(26,20,16,0.07)" stroke-width="0.7"/>
-          <line x1="80" y1="148" x2="340" y2="148" stroke="rgba(26,20,16,0.07)" stroke-width="0.7"/>
-          <line x1="80" y1="168" x2="300" y2="168" stroke="rgba(26,20,16,0.07)" stroke-width="0.7"/>
-          <line x1="80" y1="188" x2="260" y2="188" stroke="rgba(26,20,16,0.07)" stroke-width="0.7"/>
-
-          <!-- Gold accent rule -->
-          <line x1="80" y1="94" x2="340" y2="94" stroke="rgba(201,168,76,0.25)" stroke-width="0.5"/>
-
-          <!-- Letter text -->
-          <text x="210" y="85" text-anchor="middle"
-                font-family="'Playfair Display', serif"
-                font-size="11"
-                fill="rgba(201,168,76,0.65)"
-                font-style="italic"
-                letter-spacing="3">A SURPRISE FOR YOU, MUM</text>
-
-          <!-- Corner ornament -->
-          <text x="62" y="85" text-anchor="middle"
-                font-family="serif" font-size="9"
-                fill="rgba(201,168,76,0.35)">✦</text>
-          <text x="358" y="85" text-anchor="middle"
-                font-family="serif" font-size="9"
-                fill="rgba(201,168,76,0.35)">✦</text>
+        <!-- letter -->
+        <g class="e-letter">
+          <rect x="44" y="64" width="352" height="200" rx="2" fill="rgba(0,0,0,.38)"/>
+          <rect x="42" y="62" width="352" height="200" rx="2" fill="#f5f0e8"/>
+          <line x1="84" y1="112" x2="358" y2="112" stroke="rgba(24,20,15,.065)" stroke-width=".7"/>
+          <line x1="84" y1="132" x2="358" y2="132" stroke="rgba(24,20,15,.065)" stroke-width=".7"/>
+          <line x1="84" y1="152" x2="358" y2="152" stroke="rgba(24,20,15,.065)" stroke-width=".7"/>
+          <line x1="84" y1="172" x2="318" y2="172" stroke="rgba(24,20,15,.065)" stroke-width=".7"/>
+          <line x1="84" y1="192" x2="278" y2="192" stroke="rgba(24,20,15,.065)" stroke-width=".7"/>
+          <!-- gold rule -->
+          <line x1="84" y1="97" x2="356" y2="97" stroke="rgba(200,164,90,.22)" stroke-width=".5"/>
+          <!-- heading -->
+          <text x="218" y="88" text-anchor="middle"
+            font-family="'Playfair Display',serif" font-size="11.5"
+            fill="rgba(200,164,90,.62)" font-style="italic" letter-spacing="2.8">
+            A SURPRISE FOR YOU, MUM
+          </text>
+          <!-- ornaments -->
+          <text x="66"  y="89" text-anchor="middle" font-family="serif" font-size="9" fill="rgba(200,164,90,.32)">✦</text>
+          <text x="372" y="89" text-anchor="middle" font-family="serif" font-size="9" fill="rgba(200,164,90,.32)">✦</text>
         </g>
 
-        <!-- ── FRONT PANEL ── -->
-        <rect x="10" y="134" width="400" height="146" rx="2" fill="#0d0d0d"/>
-        <rect x="10" y="134" width="400" height="146" rx="2" stroke="#2a2a2a" stroke-width="0.5"/>
+        <!-- front -->
+        <rect x="10" y="136" width="420" height="152" rx="2" fill="#0a0a0a"/>
+        <rect x="10" y="136" width="420" height="152" rx="2" stroke="#252525" stroke-width=".5"/>
 
-        <!-- Side triangles — classic envelope geometry -->
-        <polygon points="10,134 210,226 10,280" fill="#151515"/>
-        <polygon points="410,134 210,226 410,280" fill="#191919"/>
-        <polygon points="10,280 210,226 410,280 410,284 10,284" fill="#0a0a0a"/>
+        <!-- side triangles -->
+        <polygon points="10,136 220,232 10,288"  fill="#131313"/>
+        <polygon points="430,136 220,232 430,288" fill="#171717"/>
+        <polygon points="10,288 220,232 430,288 430,292 10,292" fill="#090909"/>
+        <line x1="10" y1="288" x2="430" y2="288" stroke="#262626" stroke-width=".5"/>
 
-        <!-- Bottom edge hairline -->
-        <line x1="10" y1="280" x2="410" y2="280" stroke="#282828" stroke-width="0.5"/>
-
-        <!-- ── FLAP ── -->
-        <g class="flap">
-          <polygon points="10,138 210,232 410,138" fill="#121212"/>
-          <polygon points="10,138 210,232 410,138" fill="url(#flapGrad)" opacity="0.6"/>
-          <!-- Flap crease -->
-          <line x1="10" y1="138" x2="210" y2="232"
-                stroke="rgba(255,255,255,0.03)" stroke-width="0.8"/>
-          <line x1="410" y1="138" x2="210" y2="232"
-                stroke="rgba(255,255,255,0.03)" stroke-width="0.8"/>
+        <!-- flap -->
+        <g class="e-flap">
+          <polygon points="10,140 220,236 430,140" fill="#111111"/>
+          <polygon points="10,140 220,236 430,140" fill="url(#fg)" opacity=".55"/>
+          <line x1="10"  y1="140" x2="220" y2="236" stroke="rgba(255,255,255,.025)" stroke-width=".8"/>
+          <line x1="430" y1="140" x2="220" y2="236" stroke="rgba(255,255,255,.025)" stroke-width=".8"/>
         </g>
 
-        <!-- ── WAX SEAL ── -->
-        <g class="seal">
-          <!-- Outer glow ring -->
-          <circle cx="210" cy="218" r="28" fill="rgba(201,168,76,0.06)"/>
-          <!-- Seal body -->
-          <circle cx="210" cy="218" r="22" fill="#8a1a1a"/>
-          <circle cx="210" cy="218" r="19" fill="#9d1f1f"/>
-          <!-- Inner texture ring -->
-          <circle cx="210" cy="218" r="16" fill="none" stroke="rgba(255,200,100,0.12)" stroke-width="0.8"/>
-          <!-- Seal initials -->
-          <text x="210" y="222.5" text-anchor="middle"
-                
-                font-size="13"
-                fill="rgba(255,220,150,0.9)"
-               
-            >💛</text>
+        <!-- wax seal -->
+        <g class="e-seal">
+          <circle cx="220" cy="222" r="29" fill="rgba(200,164,90,.055)"/>
+          <circle cx="220" cy="222" r="23" fill="#8a1919"/>
+          <circle cx="220" cy="222" r="20" fill="#9e1f1f"/>
+          <circle cx="220" cy="222" r="16.5" fill="none" stroke="rgba(255,200,100,.1)" stroke-width=".8"/>
+          <text x="220" y="227" text-anchor="middle"
+            font-family="'Playfair Display',serif" font-size="11.5"
+            fill="rgba(255,218,145,.88)" font-style="italic">Mum</text>
         </g>
 
-        <!-- Gradient defs -->
         <defs>
-          <linearGradient id="flapGrad" x1="210" y1="138" x2="210" y2="232" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#2a2a2a"/>
-            <stop offset="100%" stop-color="#0d0d0d"/>
+          <linearGradient id="fg" x1="220" y1="140" x2="220" y2="236" gradientUnits="userSpaceOnUse">
+            <stop offset="0%"   stop-color="#282828"/>
+            <stop offset="100%" stop-color="#0a0a0a"/>
           </linearGradient>
         </defs>
 
@@ -123,122 +95,190 @@
 
     <div class="env-rule"></div>
 
-    <button class="reveal-btn" onclick="openEnvelope()">
-      Open the Envelope
-      <span class="btn-arrow">→</span>
+    <!-- audio (optional) — replace src with your mp3 -->
+    <audio id="bg-music" loop>
+      <source src="assets/Audiomack - Music platform empowering artists & fans.m4a" type="audio/mpeg">
+    </audio>
+
+    <button class="env-btn" onclick="openEnvelope()">
+      Open the Envelope <span class="arr">→</span>
     </button>
-
-    <p class="env-counter">22 · 05 · 2026</p>
-
+    <p class="env-date">22 · 05 · 2026</p>
   </div>
 
   <!-- ══════════════════════════════════
        STAGE 2: WEBSITE
   ══════════════════════════════════ -->
-
-    <audio id="bg-music" loop>
-        <source src="Audiomack - Music platform empowering artists & fans.m4a" type="audio/mpeg">
-    </audio>
-  <div id="website-stage">
-
-    <!-- ── VIDEO SECTION ── -->
-    <section id="video-section">
-
-      <!-- Topbar -->
-      <div class="video-topbar">
-        <span class="topbar-wordmark">A Private Moment</span>
-        <span class="topbar-date">22 · May · 2026</span>
+  <div id="site">
+    <!-- HERO / VIDEO -->
+    <section id="hero">
+      <div class="hero-bar">
+        <span class="hb-l">For Mum, With Love</span>
+        <span class="hb-r">22 · May · 2026</span>
       </div>
-
-      <!-- Background Video -->
+      
       <div class="video-bg">
+        <!-- replace src with your video file -->
         <video id="bg-video" autoplay muted loop playsinline>
           <source src="" type="video/mp4">
         </video>
-        <div class="video-overlay"></div>
       </div>
 
-      <!-- Birthday Content -->
-      <div class="birthday-content">
-
-        <p class="bday-eyebrow">Happy Birthday, Mum</p>
-
-        <h1 class="bday-name">
-          <em>Happy Birthday,</em><br>
+      <div class="hero-content">
+        <p class="h-eye">Happy Birthday</p>
+        <h1 class="h-name">
+          <em>Happy Birthday,</em>
           <span>Mum</span>
         </h1>
-
-        <div class="bday-divider"></div>
-
-        <p class="bday-message">
+        <div class="h-rule"></div>
+        <p class="h-msg">
           Thank you for every sacrifice you never mentioned,<br>
-          every prayer you said quietly, and every time<br>
+          every quiet prayer, and every time<br>
           you showed up — without being asked.
         </p>
-
       </div>
 
-      <!-- Buttons -->
-      <div class="video-buttons">
-        <button class="vbtn" onclick="replay()">↩ Replay</button>
-        <button class="vbtn" onclick="goToProfile()">Continue ↓</button>
-      </div>
+      
+      <div class="hero-btns">
+        <button class="hbtn" onclick="replay()">↩ Replay</button>
+        <button class="hbtn" onclick="nav('profile')">Continue ↓</button>
+        <button class="hbtn" onclick="toggleMute()" id="mute-btn">⏸ Music</button>
 
+      </div>
     </section>
 
-    <!-- ── PROFILE SECTION ── -->
-    <section class="profile-section" id="profile-section">
+    <!-- PROFILE -->
+    <section id="profile">
+      <button class="prof-back" onclick="nav('hero')">Back to top</button>
 
-      <button class="back-btn" onclick="goBackToVideo()">Back to top</button>
+      <div class="prof-numeral">Mum</div>
 
-      <div class="profile-bg-numeral">Mum</div>
+      <div class="prof-inner">
 
-      <div class="profile-inner">
-
-        <!-- Photo -->
-        <div class="profile-photo-wrap">
-          <!-- <img src="photo.jpg" alt="CJ"> -->
-          <div class="photo-placeholder">
-            <img src="mum 1.jpeg" alt="mum's picture" srcset="">
-          </div>
+        <div class="prof-photo">
+          <img src="assets/mum 1.jpeg" alt="Mum">
+          
         </div>
 
-        <!-- Text -->
-        <div class="profile-text">
-
-          <p class="profile-eyebrow">The Woman Behind Everything</p>
-
-          <h2 class="profile-name"><em>Mum</em></h2>
-
-          <div class="profile-divider"></div>
-
-          <p class="profile-bio">
+        <div class="prof-text">
+          <p class="prof-eye">The Woman Behind Everything</p>
+          <h2 class="prof-name"><em>Mum</em></h2>
+          <div class="prof-divider"></div>
+          <p class="prof-bio">
             There are no words big enough for what you are to me.
             You have been my strength on the days I had none,
             my voice when I didn't know what to say,
             and my safe place in every storm.
           </p>
-
-          <p class="profile-bio">
+          <p class="prof-bio">
             Thank you for always supporting me — through every doubt,
             every late night, every dream I dared to chase.
             None of it would mean anything without you.
           </p>
-
-          <p class="profile-wishes">Happy Birthday, Mum 🥂</p>
-
+          <p class="prof-wish">Happy Birthday, Mum 🥂</p>
         </div>
 
       </div>
 
-      <div class="profile-footer">
-        <span class="profile-footer-left">A Birthday Surprise · 2026</span>
-        <span class="profile-footer-right">✦</span>
+      <div class="prof-foot">
+        <span class="pfl">A Birthday Surprise · 2026</span>
+        <span class="pfr">✦</span>
+      </div>
+    </section>
+
+    <!-- MEMORIES / GALLERY -->
+    <section id="memories">
+
+      <div class="mem-header">
+        <div class="mem-hd-left">
+          <p class="mem-eyebrow">Moments in Time</p>
+          <h2 class="mem-title">Memories</h2>
+        </div>
+        <span class="mem-count">06 photographs</span>
+      </div>
+
+      <div class="mem-grid">
+
+        <!-- Cell A1 — replace placeholder div with <img src="photo1.jpg" alt=""> -->
+        <div class="mc mc-a1" onclick="lb(this, 'A moment worth keeping')">
+          <div class="mc-ph">
+            <img src="assets/pictures/WhatsApp Image 2026-05-21 at 22.54.33.jpeg" alt="" srcset="">
+          </div>
+          <div class="mc-view"><span>View</span></div>
+          <div class="mc-cap"><p>A moment worth keeping</p></div>
+        </div>
+
+        <!-- Cell A2 -->
+        <div class="mc mc-a2" onclick="lb(this, 'Always smiling')">
+          <div class="mc-ph">
+            <img src="assets/pictures/WhatsApp Image 2026-05-22 at 06.15.44.jpeg" alt="" srcset="">
+          </div>
+          <div class="mc-view"><span>View</span></div>
+          <div class="mc-cap"><p>Always smiling</p></div>
+        </div>
+
+        <!-- Cell A3 -->
+        <div class="mc mc-a3" onclick="lb(this, 'Pure love')">
+          <div class="mc-ph">
+            <img src="assets/pictures/WhatsApp Image 2026-05-22 at 06.15.45 (1).jpeg" alt="" srcset="">
+          </div>
+          <div class="mc-view"><span>View</span></div>
+          <div class="mc-cap"><p>Pure love</p></div>
+        </div>
+
+        <!-- Cell B1 -->
+        <div class="mc mc-b1" onclick="lb(this, 'A day to remember')">
+          <div class="mc-ph">
+            <img src="assets/pictures/mum landscape.png" alt="" srcset="">
+          </div>
+          <div class="mc-view"><span>View</span></div>
+          <div class="mc-cap"><p>A day to remember</p></div>
+        </div>
+
+        <!-- Cell B2 -->
+        <div class="mc mc-b2" onclick="lb(this, 'Together')">
+          <div class="mc-ph">
+           <img src="assets/pictures/WhatsApp Image 2026-05-22 at 06.15.45 (2).jpeg" alt="" srcset="">
+          </div>
+          <div class="mc-view"><span>View</span></div>
+          <div class="mc-cap"><p>Together</p></div>
+        </div>
+
+        <!-- Cell B3 -->
+        <div class="mc mc-b3" onclick="lb(this, 'Forever grateful')">
+          <div class="mc-ph">
+            <img src="assets/pictures/WhatsApp Image 2026-05-22 at 06.15.45.jpeg" alt="" srcset="">
+          </div>
+          <div class="mc-view"><span>View</span></div>
+          <div class="mc-cap"><p>Forever grateful</p></div>
+        </div>
+
+      </div><!-- /mem-grid -->
+
+      <div class="mem-tail">
+        <div class="mem-tail-rule"></div>
+        <span class="mem-tail-label">End of Gallery · 2026</span>
       </div>
 
     </section>
 
+  </div><!-- /site -->
+
+  <!-- LIGHTBOX -->
+  <div id="lb" onclick="lbClose(event)">
+    <button class="lb-close" onclick="lbClose(event)">Close ✕</button>
+    <img id="lb-img" src="" alt="">
+    <div id="lb-ph">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1">
+        <rect x="3" y="3" width="18" height="18" rx="1.5"/>
+        <circle cx="8.5" cy="8.5" r="1.5"/>
+        <path d="M21 15l-5-5L5 21"/>
+      </svg>
+      <p>Replace placeholder with a real photo</p>
+    </div>
+    <span id="lb-label"></span>
   </div>
-<script src="script.js"></script>
+
+  <script src="script.js"></script>
 </body>
 </html>
